@@ -1,6 +1,11 @@
 name: Java CI with Maven
+<<<<<<< HEAD
   
   on:[push, pull_request]
+=======
+
+on: [push, pull_request]
+>>>>>>> fb91427477fb41f4358cbd3bd6821b866115cfa9
 
 jobs:
   build:
