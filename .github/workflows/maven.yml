@@ -1,11 +1,6 @@
 name: Java CI with Maven
-<<<<<<< HEAD
-  
-  on:[push, pull_request]
-=======
 
 on: [push, pull_request]
->>>>>>> fb91427477fb41f4358cbd3bd6821b866115cfa9
 
 jobs:
   build:
@@ -19,5 +14,5 @@ jobs:
         with: 
           java-version: '11'
           distribution: 'adopt'
-            - name: Build with Maven
+      - name: Build with Maven
         run: mvn -B -e verify
