@@ -3,64 +3,72 @@ import org.junit.jupiter.api.Test;
 
 public class GameTest {
     @Test
-    public void shouldFindCntLosers() {
+    public void shouldFindCntLosersRedLight() {
         int[] speedOfPlayers = new int[]{12, 7, 15};
+        Main.isGreenLight = false;
         int expected = 2;
         int actual = Game.cnt(speedOfPlayers);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindCntLosersZero() {
+    public void shouldFindCntLosersZeroRedLight() {
         int[] speedOfPlayers = new int[]{0, 0, 0};
+        Main.isGreenLight = false;
         int expected = 0;
         int actual = Game.cnt(speedOfPlayers);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindCntLosersSame() {
+    public void shouldFindCntLosersSameRedLight() {
         int[] speedOfPlayers = new int[]{15, 15, 15};
+        Main.isGreenLight = false;
         int expected = 3;
         int actual = Game.cnt(speedOfPlayers);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindCntLosersMinus() {
+    public void shouldFindCntLosersMinusRedLight() {
         int[] speedOfPlayers = new int[]{-1, -2, -3};
+        Main.isGreenLight = false;
         int expected = 0;
         int actual = Game.cnt(speedOfPlayers);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindSpeedOfLosers() {
+    public void shouldFindSpeedOfLosersRedLight() {
         int[] speedOfPlayers = new int[]{12, 0, 15};
+        Main.isGreenLight = false;
         int[] expected = new int[]{12, 15};
         int[] actual = Game.loser(speedOfPlayers);
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindSpeedOfLosersSame() {
+    public void shouldFindSpeedOfLosersSameRedLight() {
         int[] speedOfPlayers = new int[]{15, 15, 15};
+        Main.isGreenLight = false;
         int[] expected = new int[]{15, 15, 15};
         int[] actual = Game.loser(speedOfPlayers);
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindSpeedOfWinners() {
-        int[] speedOfPlayers = new int[]{12, 7, 15};
-        int[] expected = new int[]{7};
+    public void shouldFindSpeedOfWinnersRedLight() {
+        int[] speedOfPlayers = new int[]{12, 0, 15};
+        Main.isGreenLight = false;
+        int[] expected = new int[]{0};
         int[] actual = Game.winner(speedOfPlayers);
         Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void shouldFindSpeedOfWinnersZero() {
+    public void shouldFindSpeedOfWinnersZeroRedLight() {
         int[] speedOfPlayers = new int[]{0, 0, 0};
+        Main.isGreenLight = false;
         int[] expected = new int[]{0, 0, 0};
         int[] actual = Game.winner(speedOfPlayers);
         Assertions.assertArrayEquals(expected, actual);

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Main {
-    public static boolean isGreenLight = true;
+    public static boolean isGreenLight = false;
     public static int MAX_SPEED = 10;
 
     public static void main(String[] args) {
