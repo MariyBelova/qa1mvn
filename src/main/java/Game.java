@@ -1,16 +1,10 @@
 public class Game {
-        public static boolean isGreenLight = false;
-
-        public static boolean valueSpeed(int speedOfPlayer) {
-            return isGreenLight && speedOfPlayer > 0;
-        }
-
 
     public static int cnt(int[] speedOfPlayers) {
         int cntLosers = 0;
         if (Main.isGreenLight == false) {
             for (int speed : speedOfPlayers) {
-                if (speed > 0) {
+                if (speed > Main.MAX_SPEED) {
                     cntLosers++;
                 }
             }
@@ -22,7 +16,7 @@ public class Game {
         int[] losers = new int[cnt(speedOfPlayers)];
         int i = 0;
         for (int speedOfPlayer : speedOfPlayers) {
-            if (Main.isGreenLight == false && speedOfPlayer != 0) {
+            if (Main.isGreenLight == false && speedOfPlayer > Main.MAX_SPEED) {
                 losers[i] = speedOfPlayer;
                 i++;
             }
@@ -34,21 +28,28 @@ public class Game {
         int cnt = 0;
         if (Main.isGreenLight == false) {
             for (int speed : speedOfPlayers) {
-                if (speed == 0) {
+                if (speed <= Main.MAX_SPEED) {
                     cnt++;
+                }
+            }
+        } else {
+            cnt = speedOfPlayers.length;
+
+        }
+        int[] winners = new int[cnt];
+        int i = 0;
+        for (int speedOfPlayer : speedOfPlayers) {
+            if (Main.isGreenLight) {
+                winners[i] = speedOfPlayer;
+                i++;
+            } else {
+                if (Main.isGreenLight == false && speedOfPlayer <= Main.MAX_SPEED) {
+                    winners[i] = speedOfPlayer;
+                    i++;
                 }
             }
         }
 
-        int[] winners = new int[cnt];
-        int i = 0;
-        for (int speedOfPlayer : speedOfPlayers) {
-            if (Main.isGreenLight == false && speedOfPlayer == 0) {
-                winners[i] = speedOfPlayer;
-                i++;
-            }
-        }
         return winners;
     }
 }
-
