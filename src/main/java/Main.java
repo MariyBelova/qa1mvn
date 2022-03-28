@@ -15,7 +15,7 @@ public class Main {
         System.out.println("Скорости не выбывших игроков:");
         System.out.println(Arrays.toString(winners1));
 
-        String[] speedPlayers = {"Иван 15", "Мария 7", "Дмитрий 12" };
+        String[] speedPlayers = {"Иван 15", "Мария 7", "Дмитрий 12"};
         String[] winners = Homework19.speedWin(speedPlayers);
         System.out.println("Имена не выбывших игроков:");
         System.out.println(Arrays.toString(winners));
