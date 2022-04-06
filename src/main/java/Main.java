@@ -11,8 +11,6 @@ public class Main {
         System.out.println(speedyGame.getIsGreenLight());
         speedyGame.getMAX_SPEED();
         speedyGame.setMAX_SPEED();
-
-
     }
 
 
