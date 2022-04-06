@@ -5,7 +5,7 @@ public class SpeedyGameTest {
     @Test
     public void shouldFindFailedRedLight() {
         SpeedyGame speedyGame = new SpeedyGame(false, 10);
-        boolean expected = true;
+        boolean expected = false;
         boolean actual = speedyGame.isFailed(12);
         Assertions.assertEquals(expected, actual);
     }
@@ -21,7 +21,7 @@ public class SpeedyGameTest {
     @Test
     public void shouldFindFailedRedLightZeroMaxSpeed() {
         SpeedyGame speedyGame = new SpeedyGame(false, 0);
-        boolean expected = true;
+        boolean expected = false;
         boolean actual = speedyGame.isFailed(12);
         Assertions.assertEquals(expected, actual);
     }
