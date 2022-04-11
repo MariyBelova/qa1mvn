@@ -8,7 +8,7 @@ public class GameManager {
     public int cntAttempt(int[] speeds) {
         int cnt = 0;
         for (int speed : speeds) {
-            if (game.isFailed(speed)) {
+            if (!game.isFailed(speed)) {
                 cnt++;
             }
         }
