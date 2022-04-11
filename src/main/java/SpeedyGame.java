@@ -16,11 +16,12 @@ public class SpeedyGame extends Game {
 
     @Override
     public boolean isFailed(int speed) {
-        if (isGreenLight == false && speed <= MAX_SPEED) {
-            return false;
-        } else {
+        if (!isGreenLight && (speed > MAX_SPEED)) {
             return true;
+        } else {
+            return false;
         }
-
     }
+
 }
+
