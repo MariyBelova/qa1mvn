@@ -8,9 +8,17 @@ public class Main {
         game.setIsGreenLight();
         SpeedyGame speedyGame = new SpeedyGame(false, 10);
         speedyGame.isFailed(7);
-        System.out.println(speedyGame.getIsGreenLight());
-        speedyGame.getMAX_SPEED();
-        speedyGame.setMAX_SPEED();
+
+        Movable player = new FastPlayer(10, 5);
+        player.getSpeed(); // 10
+        System.out.println(player.getSpeed());
+        player.getSpeed(); // 15
+        System.out.println(player.getSpeed());
+        player.getSpeed(); // 20
+        System.out.println(player.getSpeed());
+        player.getSpeed(); // 25
+        System.out.println(player.getSpeed());
+
     }
 
 
