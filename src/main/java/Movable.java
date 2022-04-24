@@ -1,3 +1,3 @@
 interface Movable {
-    public int getSpeed();
+    int[] getSpeed();
 }

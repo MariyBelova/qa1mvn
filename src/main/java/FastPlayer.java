@@ -8,12 +8,9 @@ public class FastPlayer implements Movable {
         this.speedStep = speedStep;
     }
 
-    public int getSpeed() {
-        int i;
-        for (i = startSpeed; i < 0; i = speedStep) {
-        }
+    public int[] getSpeed() {
         speed = startSpeed += speedStep;
-        return speed;
+        return new int[]{speed};
 
     }
 

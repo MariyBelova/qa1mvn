@@ -17,19 +17,21 @@ public class GameManager {
 
     }
 
-    public int loser(Movable p1, Movable p2, Game game, int rounds) {
-        if (game.isFailed(p1.getSpeed()) && !game.isFailed(p2.getSpeed())) {
+    public int loser(Movable p1, Movable p2, int rounds) {
+        if (cntAttempt(p1.getSpeed()) > cntAttempt(p2.getSpeed())) {
             return -1;
         }
-        if (!game.isFailed(p1.getSpeed()) && game.isFailed(p2.getSpeed())) {
+        if (cntAttempt(p1.getSpeed()) < cntAttempt(p2.getSpeed()))
             return 1;
-        }
-        if (!game.isFailed(p1.getSpeed()) && !game.isFailed(p2.getSpeed())) ;
-        return 0;
+        if (cntAttempt(p1.getSpeed()) == cntAttempt(p2.getSpeed()))
+            return 0;
+        return rounds;
 
     }
 
 }
+
+
 
 
 

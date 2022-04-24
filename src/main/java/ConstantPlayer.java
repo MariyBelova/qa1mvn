@@ -5,8 +5,8 @@ public class ConstantPlayer implements Movable {
         this.speed = speed;
     }
 
-    public int getSpeed() {
-        return speed;
+    public int[] getSpeed() {
+        return new int[]{speed};
     }
 
 }
